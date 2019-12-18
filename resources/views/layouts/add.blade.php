@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    <h5 class="navbar-nav mr-auto"> <span style=" color: red;">Bjora</span></h5>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -41,13 +41,13 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="/home">{{ __('Profile') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">{{ __('Log Out') }}</a>
+
+                            </li>
+                            
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -72,15 +72,14 @@
             </div>
         </nav>
         <div class="timezone">
-        <h5 > <span style="color: red;">Bjora</span></h5>
-            <!-- Show date and time -->
-            <p> <span id="datetime"></span></p>
         
+           
+        <p> <span id="datetime"></span></p>
         <script>
-       var dt = new Date();
-        document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ 
-        (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+
-         (("0"+dt.getMinutes()+1).slice(-2));
+            var dt = new Date();
+            document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ 
+            (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()+1).slice(-2)) +":"+
+            (("0"+dt.getMinutes()+1).slice(-2));
         </script>
 
 
